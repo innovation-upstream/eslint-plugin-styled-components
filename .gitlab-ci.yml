@@ -1,0 +1,15 @@
+common_js_unit_tests:
+  stage: test
+  variables:
+    NODE_ENV: development
+  image: node:14.17.0
+  before_script:
+    - rm .npmrc
+    - yarn install --frozen-lockfile
+  script:
+    - yarn test
+  rules:
+    - if: '($CI_PIPELINE_SOURCE == "push" || $CI_PIPELINE_SOURCE == "merge_request_event") && ($CI_COMMIT_BRANCH == "main" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main")'
+      when: always
+    - if: '$FORCE_PIPELINE == "true" || $FORCE_COMMON_JS_PIPELINE == "true"'
+      when: always
