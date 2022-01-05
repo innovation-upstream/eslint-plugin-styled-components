@@ -1,6 +1,6 @@
 {
   "name": "@innovationupstream/eslint-plugin-styled-components",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "custom rules for styled-components",
   "keywords": [
     "eslint",
