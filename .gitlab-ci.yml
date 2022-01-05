@@ -9,7 +9,7 @@ common_js_unit_tests:
   script:
     - yarn test
   rules:
-    - if: '($CI_PIPELINE_SOURCE == "push" || $CI_PIPELINE_SOURCE == "merge_request_event") && ($CI_COMMIT_BRANCH == "main" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main")'
+    - if: '($CI_PIPELINE_SOURCE == "push" || $CI_PIPELINE_SOURCE == "merge_request_event") && ($CI_COMMIT_BRANCH == "master" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master")'
       when: always
     - if: '$FORCE_PIPELINE == "true" || $FORCE_COMMON_JS_PIPELINE == "true"'
       when: always
