@@ -4,7 +4,6 @@ common_js_unit_tests:
     NODE_ENV: development
   image: node:14.17.0
   before_script:
-    - rm .npmrc
     - yarn install --frozen-lockfile
   script:
     - yarn test
